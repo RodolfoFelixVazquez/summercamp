@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace TiendaJugos.Core.Entidades
+namespace summercamp.Core.Entidades
 {
     
     public class Conexion

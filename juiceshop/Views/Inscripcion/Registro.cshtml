@@ -1,0 +1,85 @@
+﻿@using summercamp.Core.Entidades
+@model InscripcionConParticpantesCursos
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Registro de Inscripciones</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <form action="@Url.Action("Guardar", "Inscripcion")">
+                            <input type="hidden" class="form-control" name="id" value="@Model.Inscripcion.Id" />
+
+                            <div class="form-group">
+                                <label>Participante:</label>
+                                @if (Model.Participantes.Count() > 0)
+                                {
+                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="participante">
+                                        <option value="">Selecciona un Participante</option>
+                                        @foreach (Participante p in Model.Participantes)
+                                        {
+                                            if (p.Id == Model.Inscripcion.Participante)
+                                            {
+                                                <option value="@p.Id" selected> @p.Nombre </option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@p.Id"> @p.Nombre </option>
+
+                                            }
+
+                                        }
+
+                                    </select>
+                                }
+                                else
+                                {
+                                    <p>No hay participantes registrados</p>
+
+                                }
+                                <label>Curso:</label>
+                                @if (Model.Cursos.Count() > 0)
+                                {
+                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="curso">
+                                        <option value="">Selecciona un Curso</option>
+                                        @foreach (Curso c in Model.Cursos)
+                                        {
+                                            if (c.Id == Model.Inscripcion.Curso)
+                                            {
+                                                <option value="@c.Id" selected> @c.Nombre </option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@c.Id"> @c.Nombre </option>
+
+                                            }
+
+                                        }
+
+                                    </select>
+                                }
+                                else
+                                {
+                                    <p>No hay cursos registrados</p>
+
+                                }
+                            </div>
+                            <button class="btn btn-success" type="submit">Guardar</button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

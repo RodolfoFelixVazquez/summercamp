@@ -1,13 +1,28 @@
 ﻿<!-- Page Content -->
+@model summercamp.Core.Entidades.Home
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">JUICE SHOP</h1>
+                <h1 class="page-header">Campamento de Verano</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <h3>Participantes</h3>
+                <h4>@Model.Participantes.Count()</h4>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3>Instructores</h3>
+                <h4>@Model.Instructores.Count()</h4>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3>Cursos</h3>
+                <h4>@Model.Cursos.Count()</h4>
+            </div>
+        </div>             
     </div>
     <!-- /.container-fluid -->
 </div>

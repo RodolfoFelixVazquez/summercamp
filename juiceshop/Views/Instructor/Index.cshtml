@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@using summercamp.Core.Entidades
+@model List<Instructor>
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Instructores</h1>
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        
+                        <a href="@Url.Action("Registro","Instructor",new {id = 0})" class="btn btn-primary">Nuevo Instructor</a>
+
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Telefono</th>
+                                        <th>Correo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (Instructor i in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @i.Nombre
+                                            </td>
+
+                                            <td>
+                                                @i.Telefono
+                                            </td>
+                                            <td>
+                                                @i.Correo
+                                            </td>
+                                            <td>
+                                                <a href="@Url.Action("Registro", "Instructor", new {id= i.Id})" class=" btn btn-primary">Editar</a>
+                                            </td>
+                                            <td>
+                                                <a href="@Url.Action("Eliminar", "Instructor", new {id= i.Id})" class=" btn btn-primary">Eliminar</a>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

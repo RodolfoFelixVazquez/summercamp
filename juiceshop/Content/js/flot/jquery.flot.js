@@ -2858,7 +2858,7 @@ Licensed under the MIT license.
                         if (x == null)
                             continue;
 
-                        // For points and lines, the cursor must be within a
+                        // For points and lines, the Cursor must be within a
                         // certain distance to the data point
                         if (x - mx > maxx || x - mx < -maxx ||
                             y - my > maxy || y - my < -maxy)
@@ -2901,7 +2901,7 @@ Licensed under the MIT license.
                         if (x == null)
                             continue;
 
-                        // for a bar graph, the cursor must be inside the bar
+                        // for a bar graph, the Cursor must be inside the bar
                         if (series[i].bars.horizontal ?
                             (mx <= Math.max(b, x) && mx >= Math.min(b, x) &&
                              my >= y + barLeft && my <= y + barRight) :

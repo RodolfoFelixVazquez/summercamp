@@ -1,4 +1,5 @@
-﻿using System;
+﻿using summercamp.Core.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,12 @@ namespace juiceshop.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            Home home = new Home();
+            home.Participantes = Participante.GetAll();
+            home.Instructores = Instructor.GetAll();
+            home.Cursos = Curso.GetAll();
+
+            return View(home);
         }
 
         public ActionResult About()

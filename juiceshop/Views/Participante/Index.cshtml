@@ -1,13 +1,13 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-@using TiendaJugos.Core.Entidades
-@model List<Jugo>
+@using summercamp.Core.Entidades
+@model List<Participante>
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Inventario de Jugos</h1>
+                <h1 class="page-header">Participantes</h1>
             </div>
         </div>
 
@@ -17,36 +17,37 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         
-                        <a href="@Url.Action("Registro","Jugo",new {id = 0})" class="btn btn-primary">Agregar nuevo</a>
+                        <a href="@Url.Action("Registro","Participante",new {id = 0})" class="btn btn-primary">Nuevo Participante</a>
 
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>Nombre</th>
-                                        <th>Descripcion</th>
-                                        <th>Precio</th>
-                                        <th>Cantidad</th>
+                                        <th>Telefono</th>
+                                        <th>Correo</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (Jugo j in Model)
+                                    @foreach (Participante p in Model)
                                     {
                                         <tr>
                                             <td>
-                                                @j.Nombre
+                                                @p.Nombre
                                             </td>
 
                                             <td>
-                                                @j.Descripcion
+                                                @p.Telefono
                                             </td>
                                             <td>
-                                                @j.Precio
+                                                @p.Correo
                                             </td>
                                             <td>
-                                                <a href="@Url.Action("Registro", "Jugo", new {id= j.Id})" class=" btn btn-primary">Editar</a>
+                                                <a href="@Url.Action("Registro", "Participante", new {id= p.Id})" class=" btn btn-primary">Editar</a>
                                             </td>
-
+                                            <td>
+                                                <a href="@Url.Action("Eliminar", "Participante", new {id= p.Id})" class=" btn btn-primary">Eliminar</a>
+                                            </td>
                                         </tr>
                                     }
 

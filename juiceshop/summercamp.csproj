@@ -120,10 +120,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\InscripcionController.cs" />
+    <Compile Include="Controllers\ParticipanteController.cs" />
+    <Compile Include="Controllers\InstructorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\JugoController.cs" />
-    <Compile Include="Controllers\UsuarioController.cs" />
-    <Compile Include="Controllers\VentaController.cs" />
+    <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -207,15 +208,19 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Usuario\Index.cshtml" />
-    <Content Include="Views\Jugo\Index.cshtml" />
-    <Content Include="Views\Jugo\Registro.cshtml" />
-    <Content Include="Views\Usuario\InicioSesion.cshtml" />
+    <Content Include="Views\Curso\Index.cshtml" />
+    <Content Include="Views\Curso\Registro.cshtml" />
+    <Content Include="Views\Instructor\Index.cshtml" />
+    <Content Include="Views\Instructor\Registro.cshtml" />
+    <Content Include="Views\Participante\Index.cshtml" />
+    <Content Include="Views\Participante\Registro.cshtml" />
+    <Content Include="Views\Inscripcion\Index.cshtml" />
+    <Content Include="Views\Inscripcion\Registro.cshtml" />
+    <Content Include="Views\Curso\Participantes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Venta\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -227,9 +232,9 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TiendaJugos.Core\TiendaJugos.Core.csproj">
+    <ProjectReference Include="..\TiendaJugos.Core\summercamp.Core.csproj">
       <Project>{CA7A6DB1-162D-4BFB-BBA6-1A71D8C408C4}</Project>
-      <Name>TiendaJugos.Core</Name>
+      <Name>summercamp.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -80,9 +80,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase\Conexion.cs" />
-    <Compile Include="Entidades\Jugo.cs" />
-    <Compile Include="Entidades\Usuario.cs" />
-    <Compile Include="Entidades\Venta.cs" />
+    <Compile Include="Entidades\Home.cs" />
+    <Compile Include="Entidades\InscripcionConParticipantesCursos.cs" />
+    <Compile Include="Entidades\Inscripcion.cs" />
+    <Compile Include="Entidades\Participante.cs" />
+    <Compile Include="Entidades\Instructor.cs" />
+    <Compile Include="Entidades\CursoConJInstructores.cs" />
+    <Compile Include="Entidades\Curso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

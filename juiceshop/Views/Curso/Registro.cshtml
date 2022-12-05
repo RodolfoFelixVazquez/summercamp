@@ -1,0 +1,65 @@
+﻿@using summercamp.Core.Entidades
+@model CursoConInstructores
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Registro de Cursos</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <form action="@Url.Action("Guardar", "Curso")">
+                            <input type="hidden" class="form-control" name="id" value="@Model.Curso.Id" />
+
+                            <div class="form-group">
+                                <label>Nombre de Curso:</label>
+                                <input class="form-control" name="nombre" value="@if (Model.Curso.Id != 0) { @Model.Curso.Nombre }">
+                                <label>Horario:</label>
+                                <input class="form-control" name="horario" value="@if (Model.Curso.Id != 0) { @Model.Curso.Horario }">
+                                <label>Instructor:</label>
+                                @if (Model.Instructores.Count() > 0)
+                                {
+                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="instructor">
+                                        <option value="">Selecciona un Instructor</option>
+                                        @foreach (Instructor instructor in Model.Instructores)
+                                        {
+                                            if (instructor.Id == Model.Curso.Instructor)
+                                            {
+                                                <option value="@instructor.Id" selected> @instructor.Nombre </option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@instructor.Id"> @instructor.Nombre </option>
+
+                                            }
+
+                                        }
+
+
+
+                                    </select>
+                                }
+                                else 
+                                {
+                                    <p>No hay instructores registrados</p>
+                                
+                                }
+                            </div>
+                            <button class="btn btn-success" type="submit">Guardar</button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
